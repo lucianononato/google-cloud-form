@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html>
+<head>
+  <title>Space Enma</title>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <table class="table table-light">
+        <thead class="thead-light">
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>WhatsApp</th>
+                <th>Açoes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for infopessoa in infopessoas %}
+                <tr>
+                    <td>{{infopessoa[0]}}</td>
+                    <td>{{infopessoa[1]}}</td>
+                    <td>{{infopessoa[2]}}</td>
+                    <td>{{infopessoa[3]}}</td>
+                    <td>
+                        <a href="/edit/{{infopessoa[0]}}">Editar</a>| 
+
+                        <a href="/apagar/{{infopessoa[0]}}">Eliminar</a>    
+                    </td>
+                </tr> 
+            {% endfor %}
+            
+        </tbody>
+    </table>
+</body>
+</html>

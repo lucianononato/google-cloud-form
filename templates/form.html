@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+    {% block title %} Pagina de form 
+    {% endblock %}
+    
+    {% block content %}
+        <div class="">
+            <h1>Obrigado por se increver</h1>
+            <small>Please comfirm you Information</small>
+            <br> <br>
+
+            <ul>  
+                {% for subscribers in subscribers %}
+                    <li>{{subscribers}}</li>
+                {% endfor %}
+            </ul>    
+        </div>
+    {% endblock  %}

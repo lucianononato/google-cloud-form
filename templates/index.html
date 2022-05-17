@@ -1,0 +1,25 @@
+<!doctype html>
+
+<html>
+<head>
+  <title>Space Enma</title>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="index-titulo">
+    <h1>Acesse a Nossa Pagina de Cadastro </h1>
+    <p>para granhar um super desconto</p>
+  </div>
+  <div class="home-area">
+    
+     <a href="{{ url_for('addcontato')}}"  class="home-button"> Realizar Cadastro </a>
+  </div>
+  <div class="home-area">
+    
+     <a href="{{ url_for('cadastros')}}"  class="home-button"> Lista de Cadastro </a>
+  </div>
+ 
+</body>
+</html>
+

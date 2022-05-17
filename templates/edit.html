@@ -1,0 +1,63 @@
+
+
+<!doctype html>
+
+<html>
+<head>
+  <title>Space Enma</title>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  
+    {% block content %}
+
+        <h1>Formulario para editar</h1>
+        {% for infopessoa in infopessoas  %}
+        <div class="formulario" >
+            <form action="/update" method="POST" > 
+                <label for="">
+                    <p>Id:</p>
+                    <br>
+                    <input type="text" value="{{infopessoa[0]}}" name="txtID" id="txtID">
+                </label>
+                <br>
+                <label for="" >
+                <p>Nome:</p><br>
+                <input type="text" name="name" id="name" placeholder="Digite o nome" value="{{infopessoa[1]}}"> 
+                <br>
+                </label>
+
+                <label for="" >
+                <p>E-mail:</p> <br> 
+                <input type="email" name="email" id="email" placeholder="Digite o e-mail" value="{{infopessoa[2]}}">
+                <br>
+                </label>
+                
+                <label for="">
+                <p>WhatsApp:</p> <br> 
+                <input type="tel" name="whatsApp" id="whatsApp" placeholder="Digite o telefone" value="{{infopessoa[3]}}">
+                </label>
+
+                <label for="">
+                    <p>Assunto:</p><br> 
+                <input type="text" name="assunto" id="assunto" placeholder="Digite o assunto">
+                <br>
+                </label>
+
+                <label for="">
+                <p>Mensagem:</p>   <br> 
+                <input type="text" class="inputMensagem" name="mensagem" id="mensagem" placeholder="Digite a mensagem">
+                </label>
+
+                <label for="">
+                    <button type="submit" class="button">Enviar</button>
+                </label>
+            
+            </form>
+        </div>
+
+    {% endfor %}
+{% endblock  %}
+</body>
+</html>
